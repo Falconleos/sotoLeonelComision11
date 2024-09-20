@@ -45,6 +45,25 @@ public class ServiceProductImpl implements ServiceProduct {
        return sellPrice;
     }
 
+    public void upDate(List<Product>productList,Integer chair,Integer desk,Integer printer,Integer notebooks){
+
+        for(Product product : productList){
+
+            if(product instanceof Chair){
+                product.setPrice(product.getPrice()+product.getPrice()*(chair/100));
+            }else if(product instanceof Desk){
+                product.setPrice(product.getPrice()+product.getPrice()*(desk/100));
+            }else if(product instanceof Notebook){
+                product.setPrice(product.getPrice()+product.getPrice()*(notebooks/100));
+            }else if(product instanceof Printer){
+                product.setPrice(product.getPrice()+product.getPrice()*(printer/100));
+            }
+
+
+        }
+
+
+    }
 
 
 
